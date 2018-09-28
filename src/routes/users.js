@@ -40,7 +40,8 @@ router.post('/users', (req, res) => {
 		[firstname, lastname, email],
 		(err, result, fields) => {
 			if (!err) {
-				res.json({ ...req.body });
+				const { insertId } = result;
+				res.json({ id: insertId, ...req.body });
 			} else {
 				console.error(err);
 				res.json({ error: 'Something was wrong, try later' });
