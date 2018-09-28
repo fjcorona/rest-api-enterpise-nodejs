@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "0ff448d9-3508-49ef-a202-ff5b3cde7746",
+		"name": "Node Rest Api - Enterprise",
+		"schema":
+			"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get  All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/users",
+							"host": ["{{host}}"],
+							"path": ["users"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/users/{{userId}}",
+							"host": ["{{host}}"],
+							"path": ["users", "{{userId}}"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw":
+								"{\n\t\"firstname\": \"Joseph\",\n\t\"lastname\": \"Smith\",\n\t\"email\": \"jsmith@mail.com\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/users",
+							"host": ["{{host}}"],
+							"path": ["users"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw":
+								"{\n\t\"firstname\": \"Joseph Alfred\",\n\t\"lastname\": \"Smith Turner\",\n\t\"email\": \"jasmitht@mail.com\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/users/{{userId}}",
+							"host": ["{{host}}"],
+							"path": ["users", "{{userId}}"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/users/{{userId}}",
+							"host": ["{{host}}"],
+							"path": ["users", "{{userId}}"]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
