@@ -27,6 +27,7 @@ CREATE TABLE `users` (
   `user_firstname` varchar(50) NOT NULL,
   `user_lastname` varchar(50) NOT NULL,
   `user_email` varchar(50) NOT NULL,
+  `user_active` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -49,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-28 15:38:07
+-- Dump completed on 2018-09-28 16:31:48
