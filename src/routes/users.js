@@ -22,7 +22,11 @@ router.get('/users/:userId', (req, res) => {
 		[userId],
 		(err, result, fields) => {
 			if (!err) {
-				res.json(result[0]);
+				res.json(
+					result.length > 0
+						? result[0]
+						: { error: `User with id ${userId} was not found` },
+				);
 			} else {
 				console.error(err);
 				res.json({ error: 'Something was wrong, try later' });
@@ -60,7 +64,12 @@ router.put('/users/:userId', (req, res) => {
 		[firstname, lastname, email, 1, userId],
 		(err, result, fields) => {
 			if (!err) {
-				res.json({ id: userId, ...req.body });
+				const { affectedRows } = result;
+				res.json(
+					affectedRows != 0
+						? { id: userId, ...req.body }
+						: { error: `User with id ${userId} was not found` },
+				);
 			} else {
 				console.error(err);
 				res.json({ error: 'Something was wrong, try later' });
@@ -79,7 +88,11 @@ router.delete('/users/:userId', (req, res) => {
 		(err, result, fields) => {
 			if (!err) {
 				const { affectedRows } = result;
-				res.json({ status: `User ${userId} has been deleted` });
+				res.json(
+					affectedRows != 0
+						? { status: `User ${userId} Deleted` }
+						: { error: `User with id ${userId} was not found` },
+				);
 			} else {
 				console.error(err);
 				res.json({ error: 'Something was wrong, try later' });
