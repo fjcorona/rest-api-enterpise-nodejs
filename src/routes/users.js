@@ -5,7 +5,7 @@ const mysqlConnection = require('../database');
 // Get all users
 router.get('/users', (req, res) => {
 	mysqlConnection.query(
-		'SELECT * FROM users WHERE user_active = ?',
+		'SELECT user_id id, user_firstname firstname, user_lastname lastname, user_email email FROM users WHERE user_active = ?',
 		[1],
 		(err, result, fields) => {
 			if (!err) {
@@ -22,7 +22,7 @@ router.get('/users', (req, res) => {
 router.get('/users/:userId', (req, res) => {
 	const { userId } = req.params;
 	mysqlConnection.query(
-		'SELECT * FROM users WHERE user_active = ? AND user_id = ?',
+		'SELECT user_id id, user_firstname firstname, user_lastname lastname, user_email email FROM users WHERE user_active = ? AND user_id = ?',
 		[1, userId],
 		(err, result, fields) => {
 			if (!err) {
