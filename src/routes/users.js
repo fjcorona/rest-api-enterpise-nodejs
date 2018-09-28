@@ -112,8 +112,8 @@ router.delete('/users/:userId', (req, res) => {
 router.delete('/users/:userId', (req, res) => {
 	const { userId } = req.params;
 	mysqlConnection.query(
-		'UPDATE  users SET user_firstname = ?, user_lastname =?, user_email = ? WHERE user_active = ? AND user_id = ?',
-		[userId],
+		'UPDATE  users SET user_active = ? WHERE user_active = ? AND user_id = ?',
+		[0, 1, userId],
 		(err, result, fields) => {
 			if (!err) {
 				const { affectedRows } = result;
