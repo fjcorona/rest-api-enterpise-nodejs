@@ -24,16 +24,16 @@ router.put('/users/:userId', (req, res) => {
 
 // Delete a user - true deletion
 
+router.delete('/users/:userId', (req, res) => {
+	res.json({});
+});
+
+// Delete a user - Just disable it
+
 /*
 router.delete('/users/:userId', (req, res) => {
 	res.json({});
 });
 */
-
-// Delete a user - Just disable it
-
-router.delete('/users/:userId', (req, res) => {
-	res.json({});
-});
 
 module.exports = router;
