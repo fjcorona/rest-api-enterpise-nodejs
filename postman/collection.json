@@ -116,7 +116,7 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"name": "Sequalize",
+					"name": "Sequelize",
 					"item": [
 						{
 							"name": "Get  All Users",
@@ -125,9 +125,9 @@
 								"header": [],
 								"body": {},
 								"url": {
-									"raw": "{{host}}/{{usersSequalizeRouter}}",
+									"raw": "{{host}}/{{usersSequelizeRouter}}",
 									"host": ["{{host}}"],
-									"path": ["{{usersSequalizeRouter}}"]
+									"path": ["{{usersSequelizeRouter}}"]
 								}
 							},
 							"response": []
@@ -140,10 +140,10 @@
 								"body": {},
 								"url": {
 									"raw":
-										"{{host}}/{{usersSequalizeRouter}}/{{userId}}",
+										"{{host}}/{{usersSequelizeRouter}}/{{userId}}",
 									"host": ["{{host}}"],
 									"path": [
-										"{{usersSequalizeRouter}}",
+										"{{usersSequelizeRouter}}",
 										"{{userId}}"
 									]
 								}
@@ -166,9 +166,9 @@
 										"{\n\t\"firstName\": \"Joseph\",\n\t\"lastName\": \"Smith\",\n\t\"email\": \"jsmith@mail.com\"\n}"
 								},
 								"url": {
-									"raw": "{{host}}/{{usersSequalizeRouter}}",
+									"raw": "{{host}}/{{usersSequelizeRouter}}",
 									"host": ["{{host}}"],
-									"path": ["{{usersSequalizeRouter}}"]
+									"path": ["{{usersSequelizeRouter}}"]
 								}
 							},
 							"response": []
@@ -190,10 +190,10 @@
 								},
 								"url": {
 									"raw":
-										"{{host}}/{{usersSequalizeRouter}}/{{userId}}",
+										"{{host}}/{{usersSequelizeRouter}}/{{userId}}",
 									"host": ["{{host}}"],
 									"path": [
-										"{{usersSequalizeRouter}}",
+										"{{usersSequelizeRouter}}",
 										"{{userId}}"
 									]
 								}
@@ -208,10 +208,10 @@
 								"body": {},
 								"url": {
 									"raw":
-										"{{host}}/{{usersSequalizeRouter}}/{{userId}}",
+										"{{host}}/{{usersSequelizeRouter}}/{{userId}}",
 									"host": ["{{host}}"],
 									"path": [
-										"{{usersSequalizeRouter}}",
+										"{{usersSequelizeRouter}}",
 										"{{userId}}"
 									]
 								}

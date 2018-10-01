@@ -11,14 +11,12 @@
     {
       "key": "usersQueriesRouter",
       "value": "users-queries",
-      "type": "text",
       "description": "",
       "enabled": true
     },
     {
-      "key": "usersSequalizeRouter",
+      "key": "usersSequelizeRouter",
       "value": "users",
-      "type": "text",
       "description": "",
       "enabled": true
     },
@@ -30,6 +28,6 @@
     }
   ],
   "_postman_variable_scope": "environment",
-  "_postman_exported_at": "2018-10-01T16:04:44.070Z",
+  "_postman_exported_at": "2018-10-01T18:21:59.877Z",
   "_postman_exported_using": "Postman/6.3.0"
 }

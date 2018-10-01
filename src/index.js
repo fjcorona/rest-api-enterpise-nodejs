@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const usersQueries = require('./routes/usersQueries');
-const usersSequalize = require('./routes/usersSequalize');
+const usersSequelize = require('./routes/usersSequelize');
 
 // Settings
 const PORT = process.env.PORT || 5000;
@@ -12,7 +12,7 @@ app.use(express.json());
 
 // Routes
 app.use(usersQueries);
-app.use(usersSequalize);
+app.use(usersSequelize);
 
 // Starting the server
 app.listen(app.get('port'), () => {
