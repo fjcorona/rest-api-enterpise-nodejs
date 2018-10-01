@@ -57,7 +57,7 @@
 								"body": {
 									"mode": "raw",
 									"raw":
-										"{\n\t\"firstname\": \"Joseph\",\n\t\"lastname\": \"Smith\",\n\t\"email\": \"jsmith@mail.com\"\n}"
+										"{\n\t\"firstName\": \"Joseph\",\n\t\"lastName\": \"Smith\",\n\t\"email\": \"jsmith@mail.com\"\n}"
 								},
 								"url": {
 									"raw": "{{host}}/{{usersQueriesRouter}}",
@@ -80,7 +80,7 @@
 								"body": {
 									"mode": "raw",
 									"raw":
-										"{\n    \"firstname\": \"Joseph Alfred\",\n    \"lastname\": \"Smith Turner\",\n    \"email\": \"jasmitht@mail.com\"\n}"
+										"{\n    \"firstName\": \"Joseph Alfred\",\n    \"lastName\": \"Smith Turner\",\n    \"email\": \"jasmitht@mail.com\"\n}"
 								},
 								"url": {
 									"raw":
@@ -163,7 +163,7 @@
 								"body": {
 									"mode": "raw",
 									"raw":
-										"{\n\t\"firstname\": \"Joseph\",\n\t\"lastname\": \"Smith\",\n\t\"email\": \"jsmith@mail.com\"\n}"
+										"{\n\t\"firstName\": \"Joseph\",\n\t\"lastName\": \"Smith\",\n\t\"email\": \"jsmith@mail.com\"\n}"
 								},
 								"url": {
 									"raw": "{{host}}/{{usersSequalizeRouter}}",
@@ -186,7 +186,7 @@
 								"body": {
 									"mode": "raw",
 									"raw":
-										"{\n    \"firstname\": \"Joseph Alfred\",\n    \"lastname\": \"Smith Turner\",\n    \"email\": \"jasmitht@mail.com\"\n}"
+										"{\n    \"firstName\": \"Joseph Alfred\",\n    \"lastName\": \"Smith Turner\",\n    \"email\": \"jasmitht@mail.com\"\n}"
 								},
 								"url": {
 									"raw":
