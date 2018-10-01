@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const mysqlConnection = require('../database');
+const mysqlConnection = require('../dbconnections/database');
 
 // Get all users
 router.get('/users', (req, res) => {
