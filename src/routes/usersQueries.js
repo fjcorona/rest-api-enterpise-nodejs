@@ -12,7 +12,7 @@ router.get('/users-queries', (req, res) => {
 				res.send(result);
 			} else {
 				console.error(err);
-				res.json({ error: 'Something was wrong, try later' });
+				res.send({ error: 'Something was wrong, try later' });
 			}
 		},
 	);
@@ -26,14 +26,14 @@ router.get('/users-queries/:userId', (req, res) => {
 		[1, userId],
 		(err, result, fields) => {
 			if (!err) {
-				res.json(
+				res.send(
 					result.length > 0
 						? result[0]
 						: { error: `User with id ${userId} was not found` },
 				);
 			} else {
 				console.error(err);
-				res.json({ error: 'Something was wrong, try later' });
+				res.send({ error: 'Something was wrong, try later' });
 			}
 		},
 	);
@@ -49,10 +49,10 @@ router.post('/users-queries', (req, res) => {
 		(err, result, fields) => {
 			if (!err) {
 				const { insertId } = result;
-				res.json({ id: insertId, ...req.body });
+				res.send({ id: insertId, ...req.body });
 			} else {
 				console.error(err);
-				res.json({ error: 'Something was wrong, try later' });
+				res.send({ error: 'Something was wrong, try later' });
 			}
 		},
 	);
@@ -69,14 +69,14 @@ router.put('/users-queries/:userId', (req, res) => {
 		(err, result, fields) => {
 			if (!err) {
 				const { affectedRows } = result;
-				res.json(
+				res.send(
 					affectedRows != 0
 						? { id: userId, ...req.body }
 						: { error: `User with id ${userId} was not found` },
 				);
 			} else {
 				console.error(err);
-				res.json({ error: 'Something was wrong, try later' });
+				res.send({ error: 'Something was wrong, try later' });
 			}
 		},
 	);
@@ -93,14 +93,14 @@ router.delete('/users-queries/:userId', (req, res) => {
 		(err, result, fields) => {
 			if (!err) {
 				const { affectedRows } = result;
-				res.json(
+				res.send(
 					affectedRows != 0
 						? { status: `User ${userId} Deleted` }
 						: { error: `User with id ${userId} was not found` },
 				);
 			} else {
 				console.error(err);
-				res.json({ error: 'Something was wrong, try later' });
+				res.send({ error: 'Something was wrong, try later' });
 			}
 		},
 	);
@@ -117,14 +117,14 @@ router.delete('/users-queries/:userId', (req, res) => {
 		(err, result, fields) => {
 			if (!err) {
 				const { affectedRows } = result;
-				res.json(
+				res.send(
 					affectedRows != 0
 						? { status: `User ${userId} Deleted` }
 						: { error: `User with id ${userId} was not found` },
 				);
 			} else {
 				console.error(err);
-				res.json({ error: 'Something was wrong, try later' });
+				res.send({ error: 'Something was wrong, try later' });
 			}
 		},
 	);
