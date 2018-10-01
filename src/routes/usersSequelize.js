@@ -83,8 +83,9 @@ router.put('/users/:userId', (req, res) => {
 		});
 });
 
-// Delete a user
+// Delete a user - true deletion
 
+/*
 router.delete('/users/:userId', (req, res) => {
 	const { userId } = req.params;
 
@@ -99,6 +100,35 @@ router.delete('/users/:userId', (req, res) => {
 			res.send(
 				affectedRows != 0
 					? { status: `User ${userId} Deleted` }
+					: { error: `User with id ${userId} was not found` },
+			);
+		})
+		.catch(err => {
+			console.error(err);
+			res.send({ error: 'Something was wrong, try later' });
+		});
+});
+*/
+
+// Delete a user - Just disable it
+
+router.delete('/users/:userId', (req, res) => {
+	const { userId } = req.params;
+
+	User.update(
+		{ active: 0 },
+		{
+			where: {
+				id: userId,
+				active: 1,
+			},
+		},
+	)
+		.then(user => {
+			const affectedRows = user[0];
+			res.send(
+				affectedRows != 0
+					? { id: userId, ...req.body }
 					: { error: `User with id ${userId} was not found` },
 			);
 		})
