@@ -5,7 +5,7 @@ const mysqlConnection = require('../database/connections/mysql/mysqlConnection')
 // Get all users
 router.get('/users-queries', (req, res) => {
 	mysqlConnection.query(
-		'SELECT id, firstName, lastName, email FROM user WHERE active = ?',
+		'SELECT id, firstName, lastName, email FROM users WHERE active = ?',
 		[1],
 		(err, result, fields) => {
 			if (!err) {
@@ -22,7 +22,7 @@ router.get('/users-queries', (req, res) => {
 router.get('/users-queries/:userId', (req, res) => {
 	const { userId } = req.params;
 	mysqlConnection.query(
-		'SELECT id, firstName, lastName, email FROM user WHERE active = ? AND id = ?',
+		'SELECT id, firstName, lastName, email FROM users WHERE active = ? AND id = ?',
 		[1, userId],
 		(err, result, fields) => {
 			if (!err) {
@@ -44,7 +44,7 @@ router.post('/users-queries', (req, res) => {
 	const { firstName, lastName, email } = req.body;
 
 	mysqlConnection.query(
-		'INSERT INTO user (firstName, lastName, email) VALUES (?, ?, ?)',
+		'INSERT INTO users (firstName, lastName, email) VALUES (?, ?, ?)',
 		[firstName, lastName, email],
 		(err, result, fields) => {
 			if (!err) {
@@ -64,7 +64,7 @@ router.put('/users-queries/:userId', (req, res) => {
 	const { firstName, lastName, email } = req.body;
 
 	mysqlConnection.query(
-		'UPDATE  user SET firstName = ?, lastName =?, email = ? WHERE active = ? AND id = ?',
+		'UPDATE  users SET firstName = ?, lastName =?, email = ? WHERE active = ? AND id = ?',
 		[firstName, lastName, email, 1, userId],
 		(err, result, fields) => {
 			if (!err) {
@@ -88,7 +88,7 @@ router.put('/users-queries/:userId', (req, res) => {
 router.delete('/users-queries/:userId', (req, res) => {
 	const { userId } = req.params;
 	mysqlConnection.query(
-		'DELETE FROM user WHERE id = ?',
+		'DELETE FROM users WHERE id = ?',
 		[userId],
 		(err, result, fields) => {
 			if (!err) {
@@ -112,7 +112,7 @@ router.delete('/users-queries/:userId', (req, res) => {
 router.delete('/users-queries/:userId', (req, res) => {
 	const { userId } = req.params;
 	mysqlConnection.query(
-		'UPDATE  user SET active = ? WHERE active = ? AND id = ?',
+		'UPDATE  users SET active = ? WHERE active = ? AND id = ?',
 		[0, 1, userId],
 		(err, result, fields) => {
 			if (!err) {
