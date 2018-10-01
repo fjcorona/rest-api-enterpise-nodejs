@@ -3,36 +3,36 @@ const router = express.Router();
 const sequelizeConnection = require('../../database/connections/sequelize/sequelizeConectionPool');
 
 // Get all users
-router.get('/users-sequelize', (req, res) => {
+router.get('/users', (req, res) => {
 	res.json({});
 });
 
 // Get an specific user
-router.get('/users-sequelize/:userId', (req, res) => {
+router.get('/users/:userId', (req, res) => {
 	res.json({});
 });
 
 // Add a user
-router.post('/users-sequelize', (req, res) => {
+router.post('/users', (req, res) => {
 	res.json({});
 });
 
 // Update a user
-router.put('/users-sequelize/:userId', (req, res) => {
+router.put('/users/:userId', (req, res) => {
 	res.json({});
 });
 
 // Delete a user - true deletion
 
 /*
-router.delete('/users-sequelize/:userId', (req, res) => {
+router.delete('/users/:userId', (req, res) => {
 	res.json({});
 });
 */
 
 // Delete a user - Just disable it
 
-router.delete('/users-sequelize/:userId', (req, res) => {
+router.delete('/users/:userId', (req, res) => {
 	res.json({});
 });
 

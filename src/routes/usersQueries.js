@@ -3,7 +3,7 @@ const router = express.Router();
 const mysqlConnection = require('../../database/connections/mysql/mysqlConnection');
 
 // Get all users
-router.get('/users', (req, res) => {
+router.get('/users-queries', (req, res) => {
 	mysqlConnection.query(
 		'SELECT user_id id, user_firstname firstname, user_lastname lastname, user_email email FROM users WHERE user_active = ?',
 		[1],
@@ -19,7 +19,7 @@ router.get('/users', (req, res) => {
 });
 
 // Get an specific user
-router.get('/users/:userId', (req, res) => {
+router.get('/users-queries/:userId', (req, res) => {
 	const { userId } = req.params;
 	mysqlConnection.query(
 		'SELECT user_id id, user_firstname firstname, user_lastname lastname, user_email email FROM users WHERE user_active = ? AND user_id = ?',
@@ -40,7 +40,7 @@ router.get('/users/:userId', (req, res) => {
 });
 
 // Add a user
-router.post('/users', (req, res) => {
+router.post('/users-queries', (req, res) => {
 	const { firstname, lastname, email } = req.body;
 
 	mysqlConnection.query(
@@ -59,7 +59,7 @@ router.post('/users', (req, res) => {
 });
 
 // Update a user
-router.put('/users/:userId', (req, res) => {
+router.put('/users-queries/:userId', (req, res) => {
 	const { userId } = req.params;
 	const { firstname, lastname, email } = req.body;
 
@@ -85,7 +85,7 @@ router.put('/users/:userId', (req, res) => {
 // Delete a user - true deletion
 
 /*
-router.delete('/users/:userId', (req, res) => {
+router.delete('/users-queries/:userId', (req, res) => {
 	const { userId } = req.params;
 	mysqlConnection.query(
 		'DELETE FROM users WHERE user_id = ?',
@@ -109,7 +109,7 @@ router.delete('/users/:userId', (req, res) => {
 
 // Delete a user - Just disable it
 
-router.delete('/users/:userId', (req, res) => {
+router.delete('/users-queries/:userId', (req, res) => {
 	const { userId } = req.params;
 	mysqlConnection.query(
 		'UPDATE  users SET user_active = ? WHERE user_active = ? AND user_id = ?',
