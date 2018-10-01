@@ -21,13 +21,11 @@ const User = sequelizeConnection.define(
 			type: Sequelize.STRING,
 			allowNull: false,
 		},
-		/*
 		active: {
 			type: Sequelize.INTEGER,
 			allowNull: false,
 			defaultValue: 1,
 		},
-		*/
 	},
 	{
 		timestamps: false,
