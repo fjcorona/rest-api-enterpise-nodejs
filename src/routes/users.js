@@ -128,7 +128,7 @@ router.delete('/users/:userId', (req, res) => {
 			const affectedRows = user[0];
 			res.send(
 				affectedRows != 0
-					? { id: userId, ...req.body }
+					? { status: `User ${userId} Deleted` }
 					: { error: `User with id ${userId} was not found` },
 			);
 		})
