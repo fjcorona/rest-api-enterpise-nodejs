@@ -10,216 +10,93 @@
 			"name": "Users",
 			"item": [
 				{
-					"name": "Queries",
-					"item": [
-						{
-							"name": "Get  All Users",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {},
-								"url": {
-									"raw": "{{host}}/{{usersQueriesRouter}}",
-									"host": ["{{host}}"],
-									"path": ["{{usersQueriesRouter}}"]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get User By Id",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {},
-								"url": {
-									"raw":
-										"{{host}}/{{usersQueriesRouter}}/{{userId}}",
-									"host": ["{{host}}"],
-									"path": [
-										"{{usersQueriesRouter}}",
-										"{{userId}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Add User",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw":
-										"{\n\t\"firstName\": \"Joseph\",\n\t\"lastName\": \"Smith\",\n\t\"email\": \"jsmith@mail.com\"\n}"
-								},
-								"url": {
-									"raw": "{{host}}/{{usersQueriesRouter}}",
-									"host": ["{{host}}"],
-									"path": ["{{usersQueriesRouter}}"]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Update User",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw":
-										"{\n    \"firstName\": \"Joseph Alfred\",\n    \"lastName\": \"Smith Turner\",\n    \"email\": \"jasmitht@mail.com\"\n}"
-								},
-								"url": {
-									"raw":
-										"{{host}}/{{usersQueriesRouter}}/{{userId}}",
-									"host": ["{{host}}"],
-									"path": [
-										"{{usersQueriesRouter}}",
-										"{{userId}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Delete User",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {},
-								"url": {
-									"raw":
-										"{{host}}/{{usersQueriesRouter}}/{{userId}}",
-									"host": ["{{host}}"],
-									"path": [
-										"{{usersQueriesRouter}}",
-										"{{userId}}"
-									]
-								}
-							},
-							"response": []
+					"name": "Get  All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/users",
+							"host": ["{{host}}"],
+							"path": ["users"]
 						}
-					],
-					"_postman_isSubFolder": true
+					},
+					"response": []
 				},
 				{
-					"name": "Sequelize",
-					"item": [
-						{
-							"name": "Get  All Users",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {},
-								"url": {
-									"raw": "{{host}}/{{usersSequelizeRouter}}",
-									"host": ["{{host}}"],
-									"path": ["{{usersSequelizeRouter}}"]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get User By Id",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {},
-								"url": {
-									"raw":
-										"{{host}}/{{usersSequelizeRouter}}/{{userId}}",
-									"host": ["{{host}}"],
-									"path": [
-										"{{usersSequelizeRouter}}",
-										"{{userId}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Add User",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw":
-										"{\n\t\"firstName\": \"Joseph\",\n\t\"lastName\": \"Smith\",\n\t\"email\": \"jsmith@mail.com\"\n}"
-								},
-								"url": {
-									"raw": "{{host}}/{{usersSequelizeRouter}}",
-									"host": ["{{host}}"],
-									"path": ["{{usersSequelizeRouter}}"]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Update User",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw":
-										"{\n    \"firstName\": \"Joseph Alfred\",\n    \"lastName\": \"Smith Turner\",\n    \"email\": \"jasmitht@mail.com\"\n}"
-								},
-								"url": {
-									"raw":
-										"{{host}}/{{usersSequelizeRouter}}/{{userId}}",
-									"host": ["{{host}}"],
-									"path": [
-										"{{usersSequelizeRouter}}",
-										"{{userId}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Delete User",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {},
-								"url": {
-									"raw":
-										"{{host}}/{{usersSequelizeRouter}}/{{userId}}",
-									"host": ["{{host}}"],
-									"path": [
-										"{{usersSequelizeRouter}}",
-										"{{userId}}"
-									]
-								}
-							},
-							"response": []
+					"name": "Get User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/users/{{userId}}",
+							"host": ["{{host}}"],
+							"path": ["users", "{{userId}}"]
 						}
-					],
-					"_postman_isSubFolder": true
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw":
+								"{\n\t\"firstName\": \"Joseph\",\n\t\"lastName\": \"Smith\",\n\t\"email\": \"jsmith@mail.com\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/users",
+							"host": ["{{host}}"],
+							"path": ["users"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw":
+								"{\n    \"firstName\": \"Joseph Alfred\",\n    \"lastName\": \"Smith Turner\",\n    \"email\": \"jasmitht@mail.com\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/users/{{userId}}",
+							"host": ["{{host}}"],
+							"path": ["users", "{{userId}}"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw":
+								"{{host}}/{{usersSequelizeRouter}}/{{userId}}",
+							"host": ["{{host}}"],
+							"path": ["{{usersSequelizeRouter}}", "{{userId}}"]
+						}
+					},
+					"response": []
 				}
 			]
 		}

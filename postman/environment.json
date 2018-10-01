@@ -9,18 +9,6 @@
       "enabled": true
     },
     {
-      "key": "usersQueriesRouter",
-      "value": "users-queries",
-      "description": "",
-      "enabled": true
-    },
-    {
-      "key": "usersSequelizeRouter",
-      "value": "users",
-      "description": "",
-      "enabled": true
-    },
-    {
       "key": "userId",
       "value": "1",
       "description": "",
@@ -28,6 +16,6 @@
     }
   ],
   "_postman_variable_scope": "environment",
-  "_postman_exported_at": "2018-10-01T20:13:26.218Z",
+  "_postman_exported_at": "2018-10-01T20:34:23.811Z",
   "_postman_exported_using": "Postman/6.3.0"
 }
