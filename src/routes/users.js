@@ -83,35 +83,7 @@ router.put('/users/:userId', (req, res) => {
 		});
 });
 
-// Delete a user - true deletion
-
-/*
-router.delete('/users/:userId', (req, res) => {
-	const { userId } = req.params;
-
-	User.destroy({
-		where: {
-			id: userId,
-			active: 1,
-		},
-	})
-		.then(user => {
-			const affectedRows = user;
-			res.send(
-				affectedRows != 0
-					? { status: `User ${userId} Deleted` }
-					: { error: `User with id ${userId} was not found` },
-			);
-		})
-		.catch(err => {
-			console.error(err);
-			res.send({ error: 'Something was wrong, try later' });
-		});
-});
-*/
-
-// Delete a user - Just disable it
-
+// Delete a user
 router.delete('/users/:userId', (req, res) => {
 	const { userId } = req.params;
 
