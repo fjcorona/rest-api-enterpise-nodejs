@@ -9,8 +9,17 @@ const {
 
 const dialect = 'mysql';
 
-const sequelizeConectionPool = new Sequelize(
+const sequelizeConection = new Sequelize(
 	`${dialect}://${user}:${password}@${host}/${database}`,
 );
 
-module.exports = sequelizeConectionPool;
+sequelizeConection
+	.authenticate()
+	.then(() => {
+		console.log('Connection has been established successfully.');
+	})
+	.catch(err => {
+		console.error('Unable to connect to the database:', err);
+	});
+
+module.exports = sequelizeConection;
