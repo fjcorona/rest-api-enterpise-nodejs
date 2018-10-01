@@ -5,7 +5,11 @@ const User = require('../database/models/User');
 
 // Get all users
 router.get('/users', (req, res) => {
-	User.findAll()
+	User.findAll({
+		where: {
+			active: 1,
+		},
+	})
 		.then(users => {
 			res.send(users);
 		})
