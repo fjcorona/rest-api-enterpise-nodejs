@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const sequelizeConnection = require('../dbconnections/sequelize/sequelizeConectionPool');
+const sequelizeConnection = require('../../database/connections/sequelize/sequelizeConectionPool');
 
 // Get all users
 router.get('/users-sequelize', (req, res) => {

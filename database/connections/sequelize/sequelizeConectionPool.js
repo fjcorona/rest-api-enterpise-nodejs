@@ -5,7 +5,7 @@ const {
 	user,
 	password,
 	host,
-} = require('../../../config/mysqlDBConfig');
+} = require('../../config/mysqlDBConfig');
 
 const dialect = 'mysql';
 
