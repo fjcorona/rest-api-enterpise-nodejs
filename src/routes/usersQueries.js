@@ -5,7 +5,7 @@ const mysqlConnection = require('../database/connections/mysql/mysqlConnection')
 // Get all users
 router.get('/users-queries', (req, res) => {
 	mysqlConnection.query(
-		'SELECT user_id id, user_firstname firstname, user_lastname lastname, user_email email FROM users WHERE user_active = ?',
+		'SELECT id, firstName, lastName, email FROM user WHERE active = ?',
 		[1],
 		(err, result, fields) => {
 			if (!err) {
@@ -22,7 +22,7 @@ router.get('/users-queries', (req, res) => {
 router.get('/users-queries/:userId', (req, res) => {
 	const { userId } = req.params;
 	mysqlConnection.query(
-		'SELECT user_id id, user_firstname firstname, user_lastname lastname, user_email email FROM users WHERE user_active = ? AND user_id = ?',
+		'SELECT id, firstName, lastName, email FROM user WHERE active = ? AND id = ?',
 		[1, userId],
 		(err, result, fields) => {
 			if (!err) {
@@ -41,11 +41,11 @@ router.get('/users-queries/:userId', (req, res) => {
 
 // Add a user
 router.post('/users-queries', (req, res) => {
-	const { firstname, lastname, email } = req.body;
+	const { firstName, lastName, email } = req.body;
 
 	mysqlConnection.query(
-		'INSERT INTO users(user_firstname, user_lastname, user_email) VALUES (?, ?, ?)',
-		[firstname, lastname, email],
+		'INSERT INTO user (firstName, lastName, email) VALUES (?, ?, ?)',
+		[firstName, lastName, email],
 		(err, result, fields) => {
 			if (!err) {
 				const { insertId } = result;
@@ -61,11 +61,11 @@ router.post('/users-queries', (req, res) => {
 // Update a user
 router.put('/users-queries/:userId', (req, res) => {
 	const { userId } = req.params;
-	const { firstname, lastname, email } = req.body;
+	const { firstName, lastName, email } = req.body;
 
 	mysqlConnection.query(
-		'UPDATE  users SET user_firstname = ?, user_lastname =?, user_email = ? WHERE user_active = ? AND user_id = ?',
-		[firstname, lastname, email, 1, userId],
+		'UPDATE  user SET firstName = ?, lastName =?, email = ? WHERE active = ? AND id = ?',
+		[firstName, lastName, email, 1, userId],
 		(err, result, fields) => {
 			if (!err) {
 				const { affectedRows } = result;
@@ -88,7 +88,7 @@ router.put('/users-queries/:userId', (req, res) => {
 router.delete('/users-queries/:userId', (req, res) => {
 	const { userId } = req.params;
 	mysqlConnection.query(
-		'DELETE FROM users WHERE user_id = ?',
+		'DELETE FROM user WHERE id = ?',
 		[userId],
 		(err, result, fields) => {
 			if (!err) {
@@ -112,7 +112,7 @@ router.delete('/users-queries/:userId', (req, res) => {
 router.delete('/users-queries/:userId', (req, res) => {
 	const { userId } = req.params;
 	mysqlConnection.query(
-		'UPDATE  users SET user_active = ? WHERE user_active = ? AND user_id = ?',
+		'UPDATE  user SET active = ? WHERE active = ? AND id = ?',
 		[0, 1, userId],
 		(err, result, fields) => {
 			if (!err) {
