@@ -15,7 +15,7 @@ router.get('/users', (req, res) => {
 		})
 		.catch(err => {
 			console.error(err);
-			res.send({ error: 'Something was wrong, try later' });
+			res.send({ error: 'Something was wrong, try later.' });
 		});
 });
 
@@ -33,12 +33,12 @@ router.get('/users/:userId', (req, res) => {
 			res.send(
 				user != null
 					? user
-					: { error: `User with id ${userId} was not found` },
+					: { error: `User with id ${userId} was not found.` },
 			);
 		})
 		.catch(err => {
 			console.error(err);
-			res.send({ error: 'Something was wrong, try later' });
+			res.send({ error: 'Something was wrong, try later.' });
 		});
 });
 
@@ -52,7 +52,7 @@ router.post('/users', (req, res) => {
 		})
 		.catch(err => {
 			console.error(err);
-			res.send({ error: 'Something was wrong, try later' });
+			res.send({ error: 'Something was wrong, try later.' });
 		});
 });
 
@@ -74,12 +74,12 @@ router.put('/users/:userId', (req, res) => {
 			res.send(
 				affectedRows != 0
 					? { id: userId, ...req.body }
-					: { error: `User with id ${userId} was not found` },
+					: { error: `User with id ${userId} was not found.` },
 			);
 		})
 		.catch(err => {
 			console.error(err);
-			res.send({ error: 'Something was wrong, try later' });
+			res.send({ error: 'Something was wrong, try later.' });
 		});
 });
 
@@ -100,13 +100,13 @@ router.delete('/users/:userId', (req, res) => {
 			const affectedRows = user[0];
 			res.send(
 				affectedRows != 0
-					? { status: `User ${userId} Deleted` }
-					: { error: `User with id ${userId} was not found` },
+					? { status: `User ${userId} was deleted.` }
+					: { error: `User with id ${userId} was not found.` },
 			);
 		})
 		.catch(err => {
 			console.error(err);
-			res.send({ error: 'Something was wrong, try later' });
+			res.send({ error: 'Something was wrong, try later.' });
 		});
 });
 

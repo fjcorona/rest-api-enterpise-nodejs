@@ -33,9 +33,9 @@ const User = sequelizeConnection.define(
 );
 
 User.prototype.toJSON = function() {
-	var userObject = Object.assign({}, this.get());
-	delete userObject.active;
-	return userObject;
+	var objectResult = Object.assign({}, this.get());
+	delete objectResult.active;
+	return objectResult;
 };
 
 module.exports = User;
