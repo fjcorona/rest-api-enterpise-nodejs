@@ -5,11 +5,7 @@ const User = require('../database/models/User');
 
 // Get all users
 router.get('/users', (req, res) => {
-	User.findAll({
-		where: {
-			active: 1,
-		},
-	})
+	User.findAll({ where: { active: 1 } })
 		.then(users => {
 			res.send(users);
 		})
@@ -23,12 +19,7 @@ router.get('/users', (req, res) => {
 router.get('/users/:userId', (req, res) => {
 	const { userId } = req.params;
 
-	User.findOne({
-		where: {
-			id: userId,
-			active: 1,
-		},
-	})
+	User.findOne({ where: { id: userId, active: 1 } })
 		.then(user => {
 			res.send(
 				user != null
@@ -44,9 +35,7 @@ router.get('/users/:userId', (req, res) => {
 
 // Add a user
 router.post('/users', (req, res) => {
-	User.create({
-		...req.body,
-	})
+	User.create({ ...req.body })
 		.then(user => {
 			res.send(user);
 		})
@@ -60,15 +49,7 @@ router.post('/users', (req, res) => {
 router.put('/users/:userId', (req, res) => {
 	const { userId } = req.params;
 
-	User.update(
-		{ ...req.body },
-		{
-			where: {
-				id: userId,
-				active: 1,
-			},
-		},
-	)
+	User.update({ ...req.body }, { where: { id: userId, active: 1 } })
 		.then(user => {
 			const affectedRows = user[0];
 			res.send(
@@ -87,15 +68,7 @@ router.put('/users/:userId', (req, res) => {
 router.delete('/users/:userId', (req, res) => {
 	const { userId } = req.params;
 
-	User.update(
-		{ active: 0 },
-		{
-			where: {
-				id: userId,
-				active: 1,
-			},
-		},
-	)
+	User.update({ active: 0 }, { where: { id: userId, active: 1 } })
 		.then(user => {
 			const affectedRows = user[0];
 			res.send(
