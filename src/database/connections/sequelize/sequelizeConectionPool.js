@@ -20,6 +20,10 @@ const sequelizeConection = new Sequelize(database, user, password, {
 		idle: 10000,
 	},
 	define: {
+		charset: 'utf8',
+		dialectOptions: {
+			collate: 'utf8_general_ci',
+		},
 		timestamps: false,
 	},
 });
