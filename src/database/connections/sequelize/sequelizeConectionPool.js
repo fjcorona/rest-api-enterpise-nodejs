@@ -19,6 +19,9 @@ const sequelizeConection = new Sequelize(database, user, password, {
 		acquire: 30000,
 		idle: 10000,
 	},
+	define: {
+		timestamps: false,
+	},
 });
 
 sequelizeConection
