@@ -27,7 +27,7 @@ const User = sequelizeConnection.define('users', {
 });
 
 User.prototype.toJSON = function() {
-	var objectResult = Object.assign({}, this.get());
+	const objectResult = Object.assign({}, this.get());
 	delete objectResult.active;
 	return objectResult;
 };
