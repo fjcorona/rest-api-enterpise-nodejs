@@ -1,22 +1,18 @@
 const Sequelize = require('sequelize');
-const sequelizeConnection = require('../../database/connections/sequelize/sequelizeConectionPool');
+const sequelizeConnection = require('../../../database/connections/sequelize/sequelizeConectionPool');
 
-const User = sequelizeConnection.define('users', {
+const Team = sequelizeConnection.define('teams', {
 	id: {
 		type: Sequelize.INTEGER,
 		primaryKey: true,
 		autoIncrement: true,
 	},
-	firstName: {
+	name: {
 		type: Sequelize.STRING,
 		allowNull: false,
 	},
-	lastName: {
-		type: Sequelize.STRING,
-		allowNull: false,
-	},
-	email: {
-		type: Sequelize.STRING,
+	description: {
+		type: Sequelize.TEXT,
 		allowNull: false,
 	},
 	active: {
@@ -26,10 +22,10 @@ const User = sequelizeConnection.define('users', {
 	},
 });
 
-User.prototype.toJSON = function() {
+Team.prototype.toJSON = function() {
 	const objectResult = Object.assign({}, this.get());
 	delete objectResult.active;
 	return objectResult;
 };
 
-module.exports = User;
+module.exports = Team;

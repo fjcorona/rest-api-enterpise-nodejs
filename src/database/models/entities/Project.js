@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelizeConnection = require('../../database/connections/sequelize/sequelizeConectionPool');
+const sequelizeConnection = require('../../../database/connections/sequelize/sequelizeConectionPool');
 
 const Project = sequelizeConnection.define('projects', {
 	id: {
