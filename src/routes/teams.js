@@ -19,7 +19,7 @@ router.get('/teams', (req, res) => {
 router.get('/teams/:teamId', (req, res) => {
 	const { teamId } = req.params;
 
-	Team.findOne({ where: { id: teamId, active: 1 } })
+	Team.findOne({ where: { id: parseInt(teamId, 10), active: 1 } })
 		.then(team => {
 			res.send(
 				team != null
@@ -49,12 +49,15 @@ router.post('/teams', (req, res) => {
 router.put('/teams/:teamId', (req, res) => {
 	const { teamId } = req.params;
 
-	Team.update({ ...req.body }, { where: { id: teamId, active: 1 } })
+	Team.update(
+		{ ...req.body },
+		{ where: { id: parseInt(teamId, 10), active: 1 } },
+	)
 		.then(team => {
 			const affectedRows = team[0];
 			res.send(
 				affectedRows != 0
-					? { id: teamId, ...req.body }
+					? { id: parseInt(teamId, 10), ...req.body }
 					: { error: `Team with id ${teamId} was not found.` },
 			);
 		})
@@ -68,7 +71,10 @@ router.put('/teams/:teamId', (req, res) => {
 router.delete('/teams/:teamId', (req, res) => {
 	const { teamId } = req.params;
 
-	Team.update({ active: 0 }, { where: { id: teamId, active: 1 } })
+	Team.update(
+		{ active: 0 },
+		{ where: { id: parseInt(teamId, 10), active: 1 } },
+	)
 		.then(team => {
 			const affectedRows = team[0];
 			res.send(

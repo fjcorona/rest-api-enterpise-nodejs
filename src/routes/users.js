@@ -19,7 +19,7 @@ router.get('/users', (req, res) => {
 router.get('/users/:userId', (req, res) => {
 	const { userId } = req.params;
 
-	User.findOne({ where: { id: userId, active: 1 } })
+	User.findOne({ where: { id: parseInt(userId, 10), active: 1 } })
 		.then(user => {
 			res.send(
 				user != null
@@ -49,12 +49,15 @@ router.post('/users', (req, res) => {
 router.put('/users/:userId', (req, res) => {
 	const { userId } = req.params;
 
-	User.update({ ...req.body }, { where: { id: userId, active: 1 } })
+	User.update(
+		{ ...req.body },
+		{ where: { id: parseInt(userId, 10), active: 1 } },
+	)
 		.then(user => {
 			const affectedRows = user[0];
 			res.send(
 				affectedRows != 0
-					? { id: userId, ...req.body }
+					? { id: parseInt(userId, 10), ...req.body }
 					: { error: `User with id ${userId} was not found.` },
 			);
 		})
@@ -68,7 +71,10 @@ router.put('/users/:userId', (req, res) => {
 router.delete('/users/:userId', (req, res) => {
 	const { userId } = req.params;
 
-	User.update({ active: 0 }, { where: { id: userId, active: 1 } })
+	User.update(
+		{ active: 0 },
+		{ where: { id: parseInt(userId, 10), active: 1 } },
+	)
 		.then(user => {
 			const affectedRows = user[0];
 			res.send(
