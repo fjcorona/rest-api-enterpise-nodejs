@@ -1,11 +1,17 @@
 const Sequelize = require('sequelize');
 const sequelizeConnection = require('../../database/connections/sequelize/sequelizeConectionPool');
 
+const Team = require('./Team');
+
 const User = sequelizeConnection.define('users', {
 	id: {
 		type: Sequelize.INTEGER,
 		primaryKey: true,
 		autoIncrement: true,
+	},
+	teamId: {
+		type: Sequelize.INTEGER,
+		allowNull: false,
 	},
 	firstName: {
 		type: Sequelize.STRING,
@@ -31,5 +37,7 @@ User.prototype.toJSON = function() {
 	delete objectResult.active;
 	return objectResult;
 };
+
+User.belongsTo(Team);
 
 module.exports = User;
