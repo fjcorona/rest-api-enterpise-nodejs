@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Project = require('../database/models/Project');
+const { Project } = require('../database/models/dbModels');
 
 // Get all projects
 router.get('/projects', (req, res) => {
