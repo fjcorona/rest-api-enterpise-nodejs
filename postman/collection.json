@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "0ff448d9-3508-49ef-a202-ff5b3cde7746",
 		"name": "Node Rest Api - Enterprise",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema":
+			"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -16,12 +17,8 @@
 						"body": {},
 						"url": {
 							"raw": "{{host}}/users",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"users"
-							]
+							"host": ["{{host}}"],
+							"path": ["users"]
 						}
 					},
 					"response": []
@@ -34,13 +31,8 @@
 						"body": {},
 						"url": {
 							"raw": "{{host}}/users/{{userId}}",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"users",
-								"{{userId}}"
-							]
+							"host": ["{{host}}"],
+							"path": ["users", "{{userId}}"]
 						}
 					},
 					"response": []
@@ -57,16 +49,13 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"firstName\": \"Joseph\",\n\t\"lastName\": \"Smith\",\n\t\"email\": \"jsmith@mail.com\"\n}"
+							"raw":
+								"{\n\t\"firstName\": \"Joseph\",\n\t\"lastName\": \"Smith\",\n\t\"email\": \"jsmith@mail.com\"\n}"
 						},
 						"url": {
 							"raw": "{{host}}/users",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"users"
-							]
+							"host": ["{{host}}"],
+							"path": ["users"]
 						}
 					},
 					"response": []
@@ -83,17 +72,13 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"Joseph Alfred\",\n    \"lastName\": \"Smith Turner\",\n    \"email\": \"jasmitht@mail.com\"\n}"
+							"raw":
+								"{\n    \"firstName\": \"Joseph Alfred\",\n    \"lastName\": \"Smith Turner\",\n    \"email\": \"jasmitht@mail.com\"\n}"
 						},
 						"url": {
 							"raw": "{{host}}/users/{{userId}}",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"users",
-								"{{userId}}"
-							]
+							"host": ["{{host}}"],
+							"path": ["users", "{{userId}}"]
 						}
 					},
 					"response": []
@@ -106,13 +91,8 @@
 						"body": {},
 						"url": {
 							"raw": "{{host}}/users/{{userId}}",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"users",
-								"{{userId}}"
-							]
+							"host": ["{{host}}"],
+							"path": ["users", "{{userId}}"]
 						}
 					},
 					"response": []
@@ -130,12 +110,8 @@
 						"body": {},
 						"url": {
 							"raw": "{{host}}/teams",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"teams"
-							]
+							"host": ["{{host}}"],
+							"path": ["teams"]
 						}
 					},
 					"response": []
@@ -148,13 +124,8 @@
 						"body": {},
 						"url": {
 							"raw": "{{host}}/teams/{{teamId}}",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"teams",
-								"{{teamId}}"
-							]
+							"host": ["{{host}}"],
+							"path": ["teams", "{{teamId}}"]
 						}
 					},
 					"response": []
@@ -171,16 +142,13 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"Java\",\r\n\t\"description\": \"This is the Java Team\"\r\n}"
+							"raw":
+								"{\r\n\t\"name\": \"Java\",\r\n\t\"description\": \"This is the Java Team\"\r\n}"
 						},
 						"url": {
 							"raw": "{{host}}/teams",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"teams"
-							]
+							"host": ["{{host}}"],
+							"path": ["teams"]
 						}
 					},
 					"response": []
@@ -197,17 +165,13 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"Java Team\",\r\n\t\"description\": \"This is the Java Team!!!\"\r\n}"
+							"raw":
+								"{\r\n\t\"name\": \"Java Team\",\r\n\t\"description\": \"This is the Java Team!!!\"\r\n}"
 						},
 						"url": {
 							"raw": "{{host}}/teams/{{teamId}}",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"teams",
-								"{{teamId}}"
-							]
+							"host": ["{{host}}"],
+							"path": ["teams", "{{teamId}}"]
 						}
 					},
 					"response": []
@@ -220,13 +184,8 @@
 						"body": {},
 						"url": {
 							"raw": "{{host}}/teams/{{teamId}}",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"teams",
-								"{{teamId}}"
-							]
+							"host": ["{{host}}"],
+							"path": ["teams", "{{teamId}}"]
 						}
 					},
 					"response": []
@@ -244,12 +203,8 @@
 						"body": {},
 						"url": {
 							"raw": "{{host}}/projects",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"projects"
-							]
+							"host": ["{{host}}"],
+							"path": ["projects"]
 						}
 					},
 					"response": []
@@ -262,13 +217,8 @@
 						"body": {},
 						"url": {
 							"raw": "{{host}}/projects/{{projectId}}",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"projects",
-								"{{projectId}}"
-							]
+							"host": ["{{host}}"],
+							"path": ["projects", "{{projectId}}"]
 						}
 					},
 					"response": []
@@ -285,16 +235,13 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"Nice Project\",\r\n\t\"description\": \"This is a nice project\"\r\n}"
+							"raw":
+								"{\r\n\t\"name\": \"Nice Project\",\r\n\t\"description\": \"This is a nice project\"\r\n}"
 						},
 						"url": {
 							"raw": "{{host}}/projects",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"projects"
-							]
+							"host": ["{{host}}"],
+							"path": ["projects"]
 						}
 					},
 					"response": []
@@ -311,17 +258,13 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"Niciest Project\",\r\n\t\"description\": \"This is the niciest project in the world\"\r\n}"
+							"raw":
+								"{\r\n\t\"name\": \"Niciest Project\",\r\n\t\"description\": \"This is the niciest project in the world\"\r\n}"
 						},
 						"url": {
 							"raw": "{{host}}/projects/{{projectId}}",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"projects",
-								"{{projectId}}"
-							]
+							"host": ["{{host}}"],
+							"path": ["projects", "{{projectId}}"]
 						}
 					},
 					"response": []
@@ -334,13 +277,8 @@
 						"body": {},
 						"url": {
 							"raw": "{{host}}/projects/{{projectId}}",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"projects",
-								"{{projectId}}"
-							]
+							"host": ["{{host}}"],
+							"path": ["projects", "{{projectId}}"]
 						}
 					},
 					"response": []
