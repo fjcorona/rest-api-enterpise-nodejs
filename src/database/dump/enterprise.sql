@@ -88,12 +88,12 @@ CREATE TABLE `users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `teams`
+-- Dumping data for table `users`
 --
 
-LOCK TABLES `teams` WRITE;
-/*!40000 ALTER TABLE `teams` DISABLE KEYS */;
-/*!40000 ALTER TABLE `teams` ENABLE KEYS */;
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -134,4 +134,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-04 16:25:12
+-- Dump completed on 2018-10-04 16:57:37
