@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+// Import Project from dbModels
 const { Project } = require('../database/models/dbModels');
 
 // Get all projects

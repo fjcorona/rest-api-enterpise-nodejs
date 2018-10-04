@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+// Import Team from dbModels
 const { Team } = require('../database/models/dbModels');
 
 // Get all teams

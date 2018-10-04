@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+// Import User from dbModels
 const { User } = require('../database/models/dbModels');
 
 // Get all users
