@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-// Import User from dbModels
-const { User } = require('../database/models/dbModels');
+// Import User from Models
+const { User } = require('../database/models/Models');
 
 // Get all users
 router.get('/users', (req, res) => {

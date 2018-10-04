@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-// Import Project from dbModels
-const { Project } = require('../database/models/dbModels');
+// Import Project from Models
+const { Project } = require('../database/models/Models');
 
 // Get all projects
 router.get('/projects', (req, res) => {
