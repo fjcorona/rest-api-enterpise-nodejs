@@ -1,7 +1,10 @@
+const Sequelize = require('sequelize');
+const sequelizeConnection = require('../../database/connections/sequelize/sequelizeConectionPool');
+
 // Get Models
-const User = require('./entities/User');
-const Team = require('./entities/Team');
-const Project = require('./entities/User');
+const User = require('./entities/User')(Sequelize, sequelizeConnection);
+const Team = require('./entities/Team')(Sequelize, sequelizeConnection);
+const Project = require('./entities/Project')(Sequelize, sequelizeConnection);
 
 // Define relationships between Models
 

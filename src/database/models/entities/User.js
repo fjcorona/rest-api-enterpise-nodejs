@@ -1,39 +1,38 @@
-const Sequelize = require('sequelize');
-const sequelizeConnection = require('../../../database/connections/sequelize/sequelizeConectionPool');
+module.exports = (Sequelize, sequelizeConnection) => {
+	const User = sequelizeConnection.define('users', {
+		id: {
+			type: Sequelize.INTEGER,
+			primaryKey: true,
+			autoIncrement: true,
+		},
+		teamId: {
+			type: Sequelize.INTEGER,
+			allowNull: false,
+		},
+		firstName: {
+			type: Sequelize.STRING,
+			allowNull: false,
+		},
+		lastName: {
+			type: Sequelize.STRING,
+			allowNull: false,
+		},
+		email: {
+			type: Sequelize.STRING,
+			allowNull: false,
+		},
+		active: {
+			type: Sequelize.INTEGER,
+			allowNull: false,
+			defaultValue: 1,
+		},
+	});
 
-const User = sequelizeConnection.define('users', {
-	id: {
-		type: Sequelize.INTEGER,
-		primaryKey: true,
-		autoIncrement: true,
-	},
-	teamId: {
-		type: Sequelize.INTEGER,
-		allowNull: false,
-	},
-	firstName: {
-		type: Sequelize.STRING,
-		allowNull: false,
-	},
-	lastName: {
-		type: Sequelize.STRING,
-		allowNull: false,
-	},
-	email: {
-		type: Sequelize.STRING,
-		allowNull: false,
-	},
-	active: {
-		type: Sequelize.INTEGER,
-		allowNull: false,
-		defaultValue: 1,
-	},
-});
+	User.prototype.toJSON = function() {
+		const objectResult = Object.assign({}, this.get());
+		delete objectResult.active;
+		return objectResult;
+	};
 
-User.prototype.toJSON = function() {
-	const objectResult = Object.assign({}, this.get());
-	delete objectResult.active;
-	return objectResult;
+	return User;
 };
-
-module.exports = User;
