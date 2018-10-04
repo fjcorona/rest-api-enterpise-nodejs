@@ -17,12 +17,18 @@
 		{
 			"key": "teamId",
 			"value": "1",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "projectId",
+			"value": "1",
 			"type": "text",
 			"description": "",
 			"enabled": true
 		}
 	],
 	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2018-10-04T15:24:56.208Z",
+	"_postman_exported_at": "2018-10-04T17:52:20.717Z",
 	"_postman_exported_using": "Postman/6.4.0"
 }
