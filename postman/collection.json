@@ -90,10 +90,195 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw":
-								"{{host}}/{{usersSequelizeRouter}}/{{userId}}",
+							"raw": "{{host}}/users/{{userId}}",
 							"host": ["{{host}}"],
-							"path": ["{{usersSequelizeRouter}}", "{{userId}}"]
+							"path": ["users", "{{userId}}"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teams",
+			"item": [
+				{
+					"name": "Get  All Teams",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/teams",
+							"host": ["{{host}}"],
+							"path": ["teams"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Team By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/teams/{{teamId}}",
+							"host": ["{{host}}"],
+							"path": ["teams", "{{teamId}}"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Team",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw":
+								"{\r\n\t\"name\": \"Java\",\r\n\t\"description\": \"This is the Java Team\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/teams",
+							"host": ["{{host}}"],
+							"path": ["teams"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Team",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw":
+								"{\r\n\t\"name\": \"Java Team\",\r\n\t\"description\": \"This is the Java Team!!!\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/teams/{{teamId}}",
+							"host": ["{{host}}"],
+							"path": ["teams", "{{teamId}}"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Team",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/teams/{{teamId}}",
+							"host": ["{{host}}"],
+							"path": ["teams", "{{teamId}}"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "Get  All Projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/projects",
+							"host": ["{{host}}"],
+							"path": ["projects"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Project By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/projects/{{projectId}}",
+							"host": ["{{host}}"],
+							"path": ["projects", "{{projectId}}"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw":
+								"{\r\n\t\"name\": \"Nice Project\",\r\n\t\"description\": \"This is a nice project\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/projects",
+							"host": ["{{host}}"],
+							"path": ["projects"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Project",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw":
+								"{\r\n\t\"name\": \"Niciest Project\",\r\n\t\"description\": \"This is the niciest project in the world\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/projects/{{projectId}}",
+							"host": ["{{host}}"],
+							"path": ["projects", "{{projectId}}"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/projects/{{projectId}}",
+							"host": ["{{host}}"],
+							"path": ["projects", "{{projectId}}"]
 						}
 					},
 					"response": []

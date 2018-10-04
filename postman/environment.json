@@ -1,21 +1,34 @@
 {
-  "id": "af835f68-c96a-498f-a8db-ee7ec34fc799",
-  "name": "Node Rest Api Enterprise - Env",
-  "values": [
-    {
-      "key": "host",
-      "value": "http://localhost:5000",
-      "description": "",
-      "enabled": true
-    },
-    {
-      "key": "userId",
-      "value": "1",
-      "description": "",
-      "enabled": true
-    }
-  ],
-  "_postman_variable_scope": "environment",
-  "_postman_exported_at": "2018-10-01T20:34:23.811Z",
-  "_postman_exported_using": "Postman/6.3.0"
+	"id": "af835f68-c96a-498f-a8db-ee7ec34fc799",
+	"name": "Node Rest Api Enterprise - Env",
+	"values": [
+		{
+			"key": "host",
+			"value": "http://localhost:5000",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "userId",
+			"value": "1",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "teamId",
+			"value": "1",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "projectId",
+			"value": "1",
+			"type": "text",
+			"description": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2018-10-04T18:04:25.596Z",
+	"_postman_exported_using": "Postman/6.4.0"
 }
