@@ -15,6 +15,16 @@ const Project = sequelizeConnection.define('projects', {
 		type: Sequelize.TEXT,
 		allowNull: false,
 	},
+	startingDate: {
+		type: Sequelize.DATE,
+		allowNull: false,
+		defaultValue: '0000-00-00',
+	},
+	deadline: {
+		type: Sequelize.DATE,
+		allowNull: false,
+		defaultValue: '0000-00-00 00:00:00',
+	},
 	active: {
 		type: Sequelize.INTEGER,
 		allowNull: false,
